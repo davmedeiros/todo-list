@@ -8,3 +8,19 @@
     --size-gap: 64px;
     --size-border-radius: 11px;
 }
+
+body,
+main,
+aside {
+    display: grid;
+}
+
+body {
+    min-height: 100svh;
+    grid-template: auto / 311px auto;
+}
+
+aside {
+    background-color: var(--color-brand-beta);
+    color: var(--color-brand-alpha);
+}
