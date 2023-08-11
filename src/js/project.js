@@ -2,6 +2,14 @@ const Project = (name, items = []) => {
     return { name, items };
 }
 
-const defaultProject = Project('Default');
+const projects = [Project('Home')];
 
-export { Project, defaultProject };
+const getProjects = () => {
+    return projects;
+}
+
+const createProject = (name, items = []) => {
+    projects.push(Project(name, ...items))
+}
+
+export { getProjects, createProject };
