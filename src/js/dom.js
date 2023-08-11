@@ -1,3 +1,5 @@
+import checkCircleOutline from '../images/check-circle-outline.svg';
+
 const aside = document.querySelector('aside');
 
 const showProjectCreationMenu = () => {
@@ -6,6 +8,9 @@ const showProjectCreationMenu = () => {
     title.placeholder = 'new project...';
     title.id = 'project-name';
     newProject.appendChild(title);
+    const submit = document.createElement('img');
+    submit.src = checkCircleOutline;
+    newProject.appendChild(submit);
     aside.appendChild(newProject);
 }
 
