@@ -2,9 +2,15 @@ import checkCircleOutline from '../images/check-circle-outline.svg';
 import { createProject, getProjects } from './project';
 
 const aside = document.querySelector('aside');
+const projectTabs = document.querySelector('#project-tabs');
 
-const submitProject = (name) => {
-
+const submitProject = (project) => {
+    createProject(project);
+    const menu = document.querySelector('#new-project-menu');
+    menu.remove();
+    const title = document.createElement('p');
+    title.textContent = project;
+    projectTabs.appendChild(title);
 }
 
 const showProjectCreationMenu = () => {
@@ -16,7 +22,9 @@ const showProjectCreationMenu = () => {
     const submit = document.createElement('img');
     submit.src = checkCircleOutline;
     submit.id = 'confirm-project';
-    submit.addEventListener('click', submitProject(title.value));
+    submit.addEventListener('click', () => {
+        submitProject(title.value)
+    });
     newProject.appendChild(title);
     newProject.appendChild(submit);
     aside.appendChild(newProject);
@@ -25,7 +33,6 @@ const showProjectCreationMenu = () => {
 const populateAside = (projects) => {
     const addProject = document.querySelector('#show-project-creation-menu');
     addProject.addEventListener('click', showProjectCreationMenu);
-    const projectTabs = document.querySelector('#project-tabs');
 
     projects.forEach(project => {
         const title = document.createElement('p');
