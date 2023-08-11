@@ -12,7 +12,8 @@
 body,
 main,
 aside,
-aside p {
+aside p,
+.controls {
     display: grid;
 }
 
@@ -39,4 +40,25 @@ aside p {
 aside p:hover {
     background-color: var(--color-brand-psi);
     color: var(--color-brand-beta);
+}
+
+button {
+    cursor: pointer;
+}
+
+.controls {
+    grid-auto-flow: column;
+    justify-content: end;
+    gap: 5px;
+}
+
+.controls button {
+    background-color: var(--color-brand-gamma);
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.controls button:hover {
+    background-color: var(--color-brand-psi);
 }
