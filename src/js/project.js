@@ -1,5 +1,7 @@
-const Project = (name, ...items) => {
-    return { name, ...items };
+const Project = (name, items = []) => {
+    return { name, items };
 }
 
-export { Project };
+const defaultProject = Project('Default');
+
+export { Project, defaultProject };
