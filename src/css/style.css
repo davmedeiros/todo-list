@@ -30,7 +30,8 @@ aside {
     padding: 20px;
 }
 
-aside p {
+aside p,
+aside input {
     padding: 10px 0 10px 20px;
     align-items: center;
     cursor: pointer;
@@ -61,4 +62,13 @@ button {
 
 .controls button:hover {
     background-color: var(--color-brand-psi);
+}
+
+aside input {
+    cursor: text;
+    border: none;
+}
+
+aside input:focus {
+    outline: none;
 }

@@ -4,6 +4,7 @@ const showProjectCreationMenu = () => {
     const newProject = document.createElement('div');
     const title = document.createElement('input');
     title.placeholder = 'new project...';
+    title.id = 'project-name';
     newProject.appendChild(title);
     aside.appendChild(newProject);
 }
