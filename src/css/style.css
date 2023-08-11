@@ -13,18 +13,20 @@ body,
 main,
 aside,
 aside p,
+aside input,
 .controls {
     display: grid;
 }
 
 body {
     min-height: 100svh;
-    grid-template: auto / 311px auto;
+    grid-template: auto / 400px auto;
 }
 
 aside {
     background-color: var(--color-brand-beta);
     color: var(--color-brand-alpha);
+    grid-template-columns: 1fr;
     grid-auto-rows: 50px;
     align-items: center;
     padding: 20px;
@@ -36,6 +38,7 @@ aside input {
     align-items: center;
     cursor: pointer;
     border-radius: var(--size-border-radius);
+    grid-column: 1 / 2;
 }
 
 aside p:hover {
@@ -64,6 +67,13 @@ button {
     background-color: var(--color-brand-psi);
 }
 
+#new-project-menu {
+    display: grid;
+    grid-template-columns: 1fr 32px;
+    align-items: center;
+    justify-content: center;
+}
+
 aside input {
     cursor: text;
     border: none;
@@ -71,4 +81,8 @@ aside input {
 
 aside input:focus {
     outline: none;
+}
+
+#confirm-project {
+    cursor: pointer;
 }

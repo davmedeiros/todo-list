@@ -4,12 +4,15 @@ const aside = document.querySelector('aside');
 
 const showProjectCreationMenu = () => {
     const newProject = document.createElement('div');
+    newProject.id = 'new-project-menu';
     const title = document.createElement('input');
     title.placeholder = 'new project...';
     title.id = 'project-name';
-    newProject.appendChild(title);
     const submit = document.createElement('img');
     submit.src = checkCircleOutline;
+    submit.id = 'confirm-project';
+    // submit.addEventListener('click', createProject);
+    newProject.appendChild(title);
     newProject.appendChild(submit);
     aside.appendChild(newProject);
 }
