@@ -41,3 +41,19 @@ button {
     font-weight: bold;
     color: var(--color-brand-beta);
 }
+
+#projects {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: 50px;
+}
+
+.project {
+    padding: 0 20px;
+}
+
+.project:hover {
+    background-color: var(--color-brand-psi);
+    color: var(--color-brand-beta);
+    cursor: pointer;
+}
