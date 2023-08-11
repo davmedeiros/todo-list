@@ -11,7 +11,8 @@
 
 body,
 main,
-aside {
+aside,
+aside p {
     display: grid;
 }
 
@@ -23,4 +24,19 @@ body {
 aside {
     background-color: var(--color-brand-beta);
     color: var(--color-brand-alpha);
+    grid-auto-rows: 50px;
+    align-items: center;
+    padding: 20px;
+}
+
+aside p {
+    padding: 10px 0 10px 20px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: var(--size-border-radius);
+}
+
+aside p:hover {
+    background-color: var(--color-brand-psi);
+    color: var(--color-brand-beta);
 }
