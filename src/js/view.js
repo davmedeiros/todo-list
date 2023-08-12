@@ -35,9 +35,11 @@ const showProjectView = (project) => {
 const submitTodoView = (title, description, dueDate, priority) => {
     const todo = createTodo(title, description, dueDate, priority);
     const projects = getProjects();
-    projects[0].addItem(todo);
+    const activeProject = document.querySelector('.active-project');
+    const index = activeProject.dataset.numberIndex;
+    projects[index].addItem(todo);
     console.log(todo);
-    showProjectView(projects[0]);
+    showProjectView(projects[index]);
 }
 
 const showNewTodoView = (clicked) => {
@@ -82,6 +84,11 @@ const showProjectsView = (projects) => {
         projectView.dataset.numberIndex = index;
 
         projectView.addEventListener('click', () => {
+            const actives = document.querySelectorAll('.active-project');
+            actives.forEach(active => {
+                active.classList.remove('active-project');
+            });
+            projectView.classList.add('active-project')
             showProjectView(project);
         });
             
