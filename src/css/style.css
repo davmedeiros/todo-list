@@ -5,7 +5,6 @@
     --color-brand-gamma: #9db5b2;
     --color-brand-psi: #daf0ee;
     --color-brand-omega: #94d1be;
-    --shadow-default: 0 8px 4px rgba(0, 0, 0, 0.4);
     --size-default-spacing: 20px;
 }
 
@@ -23,22 +22,18 @@ aside {
     gap: var(--size-default-spacing);
 }
 
-button {
-    cursor: pointer;
-    background-color: var(--color-brand-omega);
-    border: none;
-    box-shadow: var(--shadow-default);
-}
-
 #project-actions {
     display: grid;
     grid-auto-flow: column;
 }
 
-#project-actions button {
+button {
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--color-brand-beta);
+    cursor: pointer;
+    background-color: var(--color-brand-omega);
+    border: none;
 }
 
 #projects {
@@ -66,6 +61,13 @@ button {
     padding: 0 20px;
     display: grid;
     grid-template: 1fr / 1fr 50fr;
-    align-items: center;
-    gap: 20px;
+}
+
+input {
+    border: 10px solid var(--color-brand-alpha);
+}
+
+input:focus {
+    border: 10px solid var(--color-brand-omega);
+    outline: none;
 }
