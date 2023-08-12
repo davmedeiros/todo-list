@@ -48,13 +48,24 @@ const showNewProjectView = () => {
     projectName.focus();
 }
 
+const setProjectName = (projectName) => {
+    const projectNameHeading = document.querySelector('#project-name');
+    projectNameHeading.textContent = projectName;
+}
+
+const showProjectView = (project) => {
+    setProjectName(project.name);
+}
+
 const addDefaultEventListeners = () => {
     const addProject = document.querySelector('#add-project');
     addProject.addEventListener('click', showNewProjectView);
 }
 
 const render = () => {
-    showProjectsView(getProjects());
+    const projects = getProjects();
+    showProjectsView(projects);
+    showProjectView(projects[0]);
     addDefaultEventListeners();
 }
 
