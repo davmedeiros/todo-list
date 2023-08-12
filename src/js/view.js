@@ -76,9 +76,10 @@ const showNewTodoView = (clicked) => {
 }
 
 const showProjectsView = (projects) => {
-    projects.forEach(project => {
+    projects.forEach((project, index) => {
         const projectView = document.createElement('div');
         projectView.classList.add('project');
+        projectView.dataset.numberIndex = index;
 
         projectView.addEventListener('click', () => {
             showProjectView(project);
