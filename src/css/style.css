@@ -98,3 +98,15 @@ main {
     border: 10px solid var(--color-brand-gamma);
     padding: 20px;
 }
+
+#add-todo {
+    position: fixed;
+    justify-self: end;
+    align-self: end;
+    margin: 0 50px 50px 0;
+    border-radius: 100%;
+    font-size: 5rem;
+    width: 100px;
+    height: 100px;
+    padding-bottom: 10px;
+}
