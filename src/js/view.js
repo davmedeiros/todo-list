@@ -70,6 +70,10 @@ const showProjectView = (project) => {
     showTodoList(project.items);
 }
 
+const submitTodoView = (todo) => {
+    console.log(todo);
+}
+
 const showNewTodoView = (clicked) => {
     const main = document.querySelector('main');
     const newTodoView = document.createElement('div');
@@ -90,13 +94,15 @@ const showNewTodoView = (clicked) => {
         newTodoView.appendChild(container);
     });
 
-    const submitTodoView = document.createElement('button');
-    submitTodoView.type = 'button';
-    submitTodoView.textContent = '\u2713';
+    const submitTodo = document.createElement('button');
+    submitTodo.type = 'button';
+    submitTodo.textContent = '\u2713';
     
-    // TODO: Add event listener to save todo.
+    submitTodo.addEventListener('click', () => {
+        submitTodoView('ok');
+    })
 
-    newTodoView.appendChild(submitTodoView);
+    newTodoView.appendChild(submitTodo);
     main.appendChild(newTodoView);
     clicked.target.removeEventListener('click', showNewTodoView);
 }
