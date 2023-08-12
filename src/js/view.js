@@ -2,7 +2,13 @@ import { getProjects, createProject } from "./project";
 
 const projectsView = document.querySelector('#projects');
 
-const showProjects = (projects) => {
+const clearProjectsView = () => {
+    while (projectsView.firstChild) {
+        projectsView.removeChild(projectsView.firstChild);
+    }
+}
+
+const showProjectsView = (projects) => {
     projects.forEach(project => {
         const projectView = document.createElement('div');
         projectView.classList.add('project');
@@ -14,9 +20,11 @@ const showProjects = (projects) => {
     });
 }
 
-// const submitProject = (projectName) => {
-
-// }
+const submitProjectView = (projectName) => {
+    createProject(projectName);
+    clearProjectsView();
+    showProjectsView(getProjects());
+}
 
 const showNewProjectView = () => {
     const newProjectView = document.createElement('div');
@@ -26,9 +34,9 @@ const showNewProjectView = () => {
     submitProject.id = 'submit-project';
     submitProject.textContent = '\u2713';
 
-    // submitProject.addEventListener('click', () => {
-    //     submitProject(projectName.value);
-    // });
+    submitProject.addEventListener('click', () => {
+        submitProjectView(projectName.value);
+    });
 
     newProjectView.appendChild(projectName);
     newProjectView.appendChild(submitProject);
@@ -41,8 +49,7 @@ const addDefaultEventListeners = () => {
 }
 
 const render = () => {
-    showProjects(getProjects());
-    showNewProjectView();
+    showProjectsView(getProjects());
     addDefaultEventListeners();
 }
 
