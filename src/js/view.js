@@ -53,9 +53,20 @@ const showProjectNameHeading = (projectName) => {
     projectNameHeading.textContent = projectName;
 }
 
+const showTodoList = (todoList) => {
+    const todoListView = document.querySelector('#todo-list');
+
+    todoList.forEach(todo => {
+        const todoView = document.createElement('li');
+        todoView.classList.add('todo');
+        todoListView.textContent = todo.title;
+        todoListView.appendChild(todoView);
+    });
+}
+
 const showProjectView = (project) => {
     showProjectNameHeading(project.name);
-
+    showTodoList(project.items);
 }
 
 const addDefaultEventListeners = () => {
