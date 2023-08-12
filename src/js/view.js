@@ -70,9 +70,42 @@ const showProjectView = (project) => {
     showTodoList(project.items);
 }
 
+const showNewTodoView = (clicked) => {
+    const main = document.querySelector('main');
+    const newTodoView = document.createElement('div');
+    newTodoView.id = 'new-todo-view';
+
+    const fields = ['title', 'description', 'dueDate', 'priority'];
+
+    fields.forEach(field => {
+        const container = document.createElement('div');
+        const label = document.createElement('label');
+        label.htmlFor = `todo-${field}`;
+        label.textContent = field;
+        const input = document.createElement('input');
+        input.type = field;
+        input.id = `todo-${field}`;
+        container.appendChild(label)
+        container.appendChild(input)
+        newTodoView.appendChild(container);
+    });
+
+    const submitTodoView = document.createElement('button');
+    submitTodoView.type = 'button';
+    submitTodoView.textContent = '\u2713';
+    
+    // TODO: Add event listener to save todo.
+
+    newTodoView.appendChild(submitTodoView);
+    main.appendChild(newTodoView);
+    clicked.target.removeEventListener('click', showNewTodoView);
+}
+
 const addDefaultEventListeners = () => {
     const addProject = document.querySelector('#add-project');
     addProject.addEventListener('click', showNewProjectView);
+    const addTodo = document.querySelector('#add-todo');
+    addTodo.addEventListener('click', showNewTodoView);
 }
 
 const render = () => {

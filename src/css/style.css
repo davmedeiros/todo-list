@@ -110,3 +110,20 @@ main {
     height: 100px;
     padding-bottom: 10px;
 }
+
+#new-todo-view {
+    position: absolute;
+    background-color: var(--color-brand-beta);
+    display: grid;
+    grid-auto-rows: 50px;
+    gap: 30px;
+    padding: 30px;
+    align-self: center;
+    justify-self: center;
+}
+
+#new-todo-view > div {
+    display: grid;
+    color: var(--color-brand-alpha);
+    gap: 5px;
+}
