@@ -38,9 +38,14 @@ const showNewProjectView = () => {
         submitProjectView(projectName.value);
     });
 
+    projectName.addEventListener("keypress", function (event) {
+        event.key === 'Enter' && submitProject.click();
+    });
+
     newProjectView.appendChild(projectName);
     newProjectView.appendChild(submitProject);
     projectsView.appendChild(newProjectView);
+    projectName.focus();
 }
 
 const addDefaultEventListeners = () => {
