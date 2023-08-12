@@ -71,8 +71,8 @@ const showProjectView = (project) => {
     showTodoList(project.items);
 }
 
-const submitTodoView = (todo) => {
-    console.log(todo);
+const submitTodoView = (title, description, dueDate, priority) => {
+    console.log(createTodo(title, description, dueDate, priority));
 }
 
 const showNewTodoView = (clicked) => {
@@ -80,19 +80,21 @@ const showNewTodoView = (clicked) => {
     const newTodoView = document.createElement('div');
     newTodoView.id = 'new-todo-view';
 
-    const fields = ['title', 'description', 'dueDate', 'priority'];
+    const values = ['title', 'description', 'dueDate', 'priority'];
+    const fields = [];
 
-    fields.forEach(field => {
+    values.forEach(value => {
         const container = document.createElement('div');
         const label = document.createElement('label');
-        label.htmlFor = `todo-${field}`;
-        label.textContent = field;
+        label.htmlFor = `todo-${value}`;
+        label.textContent = value;
         const input = document.createElement('input');
-        input.type = field;
-        input.id = `todo-${field}`;
+        input.type = value;
+        input.id = `todo-${value}`;
         container.appendChild(label)
         container.appendChild(input)
         newTodoView.appendChild(container);
+        fields.push(input);
     });
 
     const submitTodo = document.createElement('button');
@@ -100,7 +102,7 @@ const showNewTodoView = (clicked) => {
     submitTodo.textContent = CONFIRM_SYMBOL;
     
     submitTodo.addEventListener('click', () => {
-        submitTodoView('ok');
+        submitTodoView(fields[0].value, fields[1].value, fields[2].value, fields[3].value);
     })
 
     newTodoView.appendChild(submitTodo);
