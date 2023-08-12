@@ -9,8 +9,15 @@ const showProjectNameHeading = (projectName) => {
     projectNameHeading.textContent = projectName;
 }
 
+const clearContainer = (container) => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
 const showTodoList = (todoList) => {
     const todoListView = document.querySelector('#todo-list');
+    clearContainer(todoListView);
 
     todoList.forEach(todo => {
         const todoView = document.createElement('li');
@@ -66,12 +73,6 @@ const showNewTodoView = (clicked) => {
     clicked.target.removeEventListener('click', showNewTodoView);
 }
 
-const clearProjectsView = () => {
-    while (projectsView.firstChild) {
-        projectsView.removeChild(projectsView.firstChild);
-    }
-}
-
 const showProjectsView = (projects) => {
     projects.forEach(project => {
         const projectView = document.createElement('div');
@@ -91,7 +92,7 @@ const showProjectsView = (projects) => {
 
 const submitProjectView = (projectName) => {
     createProject(projectName);
-    clearProjectsView();
+    clearContainer(projectsView);
     showProjectsView(getProjects());
 }
 
