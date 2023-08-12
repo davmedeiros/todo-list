@@ -38,7 +38,6 @@ const submitTodoView = (title, description, dueDate, priority) => {
     const activeProject = document.querySelector('.active-project');
     const index = activeProject ? activeProject.dataset.numberIndex : 0;
     projects[index].addItem(todo);
-    console.log(todo);
     showProjectView(projects[index]);
 }
 
