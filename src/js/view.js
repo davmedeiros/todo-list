@@ -77,8 +77,10 @@ const showProjectsView = (projects) => {
         const projectView = document.createElement('div');
         projectView.classList.add('project');
 
-        // projectView.addEventListener('click', )
-
+        projectView.addEventListener('click', () => {
+            showProjectView(project);
+        });
+            
         const projectName = document.createElement('p');
         projectName.classList.add('project-name');
         projectName.textContent = project.name;
