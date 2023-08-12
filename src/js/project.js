@@ -1,5 +1,9 @@
 const Project = (name, items = []) => {
-    return {  name, items };
+    const addItem = (item) => {
+        items.push(item)
+    }
+
+    return {  name, items, addItem };
 }
 
 const projects = [Project('Daily')];

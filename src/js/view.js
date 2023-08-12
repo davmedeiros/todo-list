@@ -72,7 +72,9 @@ const showProjectView = (project) => {
 }
 
 const submitTodoView = (title, description, dueDate, priority) => {
-    console.log(createTodo(title, description, dueDate, priority));
+    const todo = createTodo(title, description, dueDate, priority);
+    // TODO: Assign to active project
+    console.log(todo);
 }
 
 const showNewTodoView = (clicked) => {
