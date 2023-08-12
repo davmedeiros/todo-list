@@ -22,7 +22,7 @@ const showTodoList = (todoList) => {
     todoList.forEach(todo => {
         const todoView = document.createElement('li');
         todoView.classList.add('todo');
-        todoListView.textContent = todo.title;
+        todoView.textContent = todo.title;
         todoListView.appendChild(todoView);
     });
 }
@@ -34,8 +34,10 @@ const showProjectView = (project) => {
 
 const submitTodoView = (title, description, dueDate, priority) => {
     const todo = createTodo(title, description, dueDate, priority);
-    // TODO: Assign to active project
+    const projects = getProjects();
+    projects[0].addItem(todo);
     console.log(todo);
+    showProjectView(projects[0]);
 }
 
 const showNewTodoView = (clicked) => {
