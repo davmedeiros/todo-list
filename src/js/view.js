@@ -1,6 +1,7 @@
 import { getProjects, createProject } from "./project";
 import { createTodo } from "./todo";
 
+const CONFIRM_SYMBOL = '\u2713';
 const projectsView = document.querySelector('#projects');
 
 const clearProjectsView = () => {
@@ -33,7 +34,7 @@ const showNewProjectView = () => {
     const projectName = document.createElement('input');
     const submitProject = document.createElement('button');
     submitProject.id = 'submit-project';
-    submitProject.textContent = '\u2713';
+    submitProject.textContent = CONFIRM_SYMBOL;
 
     submitProject.addEventListener('click', () => {
         submitProjectView(projectName.value);
@@ -96,7 +97,7 @@ const showNewTodoView = (clicked) => {
 
     const submitTodo = document.createElement('button');
     submitTodo.type = 'button';
-    submitTodo.textContent = '\u2713';
+    submitTodo.textContent = CONFIRM_SYMBOL;
     
     submitTodo.addEventListener('click', () => {
         submitTodoView('ok');
