@@ -20,7 +20,6 @@ aside {
     color: var(--color-brand-alpha);
     display: grid;
     grid-template: 1fr 50px / 1fr;
-    padding: var(--size-default-spacing);
     gap: var(--size-default-spacing);
 }
 
@@ -50,7 +49,6 @@ button {
 
 .project {
     padding: 0 20px;
-    font-weight: bold;
     border-bottom: 1px solid var(--color-brand-alpha);
 }
 
@@ -58,4 +56,16 @@ button {
     background-color: var(--color-brand-psi);
     color: var(--color-brand-beta);
     cursor: pointer;
+}
+
+.project-name {
+    font-weight: bold;
+}
+
+#new-project-view {
+    padding: 0 20px;
+    display: grid;
+    grid-template: 1fr / 1fr 50fr;
+    align-items: center;
+    gap: 20px;
 }
