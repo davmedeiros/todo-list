@@ -36,6 +36,10 @@ button {
     border: none;
 }
 
+button:hover {
+    background-color: var(--color-brand-psi);
+}
+
 #projects {
     display: grid;
     grid-auto-flow: row;
