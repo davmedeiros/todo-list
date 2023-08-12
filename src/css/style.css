@@ -22,6 +22,10 @@ aside {
     gap: var(--size-default-spacing);
 }
 
+main {
+    padding: 30px;
+}
+
 #project-actions {
     display: grid;
     grid-auto-flow: column;
@@ -74,4 +78,23 @@ input {
 input:focus {
     border: 10px solid var(--color-brand-omega);
     outline: none;
+}
+
+main {
+    display: grid;
+    gap: 20px;
+    grid-template: 180px 1fr / 1fr;
+}
+
+#project-heading {
+    border: 10px solid var(--color-brand-omega);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+#project-details {
+    border: 10px solid var(--color-brand-gamma);
+    padding: 20px;
 }
