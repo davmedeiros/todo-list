@@ -1,4 +1,5 @@
 import { getProjects, createProject } from "./project";
+import { createTodo } from "./todo";
 
 const projectsView = document.querySelector('#projects');
 
