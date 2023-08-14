@@ -130,7 +130,7 @@ main {
 
 .todo {
     display: grid;
-    grid-template: 1fr / 300px auto 100px 20px;
+    grid-template: 1fr / 300px auto 120px 20px;
     list-style: none;
 }
 
