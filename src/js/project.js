@@ -8,30 +8,35 @@ const Project = (name, items = []) => {
 
 let projects = [];
 
-// TODO: Store the items properly somehow
 const saveToLocalStorage = () => {
-    localStorage.setItem("projects", JSON.stringify(projects));
+    const projectNames = [];
+
+    projects.forEach(project => {
+        projectNames.push(project.name);
+        const items = project.items;
+        localStorage.setItem(project.name, JSON.stringify(items));
+    });
+    
+    localStorage.setItem("projects", JSON.stringify(projectNames));
 }
 
 const loadFromLocalStorage = () => {
-    let tempProjects = [];
-    tempProjects = JSON.parse(localStorage.getItem("projects") || "[]");
+    let projectNames = [];
+    projectNames = JSON.parse(localStorage.getItem("projects") || "[]");
 
-    tempProjects.forEach(tempProject => {
-        createProject(tempProject.name, tempProject.items);
+    projectNames.forEach(projectName => {
+        const items = JSON.parse(localStorage.getItem(projectName) || "[]");
+        createProject(projectName, items);
     });
 }
 
 const createProject = (name, items) => {
     projects.push(Project(name, items));
-    saveToLocalStorage();
 }
-
-loadFromLocalStorage();
 
 const getProjects = () => {
     projects.length === 0 && createProject('Daily');
     return projects;
 }
 
-export { getProjects, createProject };
+export { getProjects, createProject, saveToLocalStorage, loadFromLocalStorage };

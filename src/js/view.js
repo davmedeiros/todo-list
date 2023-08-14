@@ -1,4 +1,4 @@
-import { getProjects, createProject } from "./project";
+import { getProjects, createProject, saveToLocalStorage, loadFromLocalStorage } from "./project";
 import { createTodo } from "./todo";
 
 const CONFIRM_SYMBOL = '\u2713';
@@ -38,6 +38,7 @@ const submitTodoView = (title, description, dueDate, priority) => {
     const activeProject = document.querySelector('.active-project');
     const index = activeProject ? activeProject.dataset.numberIndex : 0;
     projects[index].addItem(todo);
+    saveToLocalStorage();
     showProjectView(projects[index]);
 }
 
@@ -101,6 +102,7 @@ const showProjectsView = (projects) => {
 
 const submitProjectView = (projectName) => {
     createProject(projectName);
+    saveToLocalStorage();
     clearContainer(projectsView);
     showProjectsView(getProjects());
 }
@@ -135,6 +137,7 @@ const addDefaultEventListeners = () => {
 }
 
 const render = () => {
+    loadFromLocalStorage();
     const projects = getProjects();
     showProjectsView(projects);
     showProjectView(projects[0]);
