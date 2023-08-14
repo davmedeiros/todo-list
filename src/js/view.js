@@ -22,7 +22,18 @@ const showTodoList = (todoList) => {
     todoList.forEach(todo => {
         const todoView = document.createElement('li');
         todoView.classList.add('todo');
-        todoView.textContent = todo.title;
+        const title = document.createElement('p');
+        const description = document.createElement('p');
+        const dueDate = document.createElement('p');
+        const priority = document.createElement('p');
+        title.textContent = todo.title;
+        description.textContent = todo.description;
+        dueDate.textContent = todo.dueDate;
+        priority.textContent = todo.priority;
+        todoView.appendChild(title);
+        todoView.appendChild(description);
+        todoView.appendChild(dueDate);
+        todoView.appendChild(priority);
         todoListView.appendChild(todoView);
     });
 }

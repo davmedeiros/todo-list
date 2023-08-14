@@ -127,3 +127,14 @@ main {
     color: var(--color-brand-alpha);
     gap: 5px;
 }
+
+.todo {
+    display: grid;
+    grid-template: 1fr / 300px auto 100px 20px;
+    list-style: none;
+}
+
+.todo > * {
+    border: 2px solid var(--color-brand-beta);
+    padding: 10px;
+}
