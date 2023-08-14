@@ -67,7 +67,19 @@ const showNewTodoView = () => {
         label.htmlFor = `todo-${value}`;
         label.textContent = value;
         const input = document.createElement('input');
-        input.type = value;
+
+        switch (value) {
+            case values[2]:
+                input.type = 'date';
+                break;
+            case values[3]:
+                input.type = 'number';
+                break;    
+            default:
+                input.type = value;
+                break;
+        }
+
         input.id = `todo-${value}`;
         container.appendChild(label)
         container.appendChild(input)
