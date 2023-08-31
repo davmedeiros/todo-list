@@ -1,2 +1,1 @@
-# todo-list
-TOP - Todo List
+# TOP - Educational Project - Todo List
